@@ -255,16 +255,12 @@ h3 {
     flex-direction: column;
 }
 
-
-
 .scroll-top:hover {
     transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
-
     .nav ul {
         flex-direction: column;
         text-align: center;
@@ -287,7 +283,6 @@ h3 {
     .contacts {
         scroll-margin-top: 100px;
     }
-
 
     .map-iframe {
         width: 100%;
@@ -391,7 +386,6 @@ h3 {
     }
     .burger {
         display: none;
-
     }
     .mobile-nav {
         flex-direction: column;
@@ -512,5 +506,31 @@ h3 {
 
     .advantage-card p {
         font-size: 1rem;
+    }
+}
+
+.menu-link {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.menu-link:hover {
+    transform: scale(1.05);
+    background-color: #ff8c00;
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .menu-link {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-left: 10px;
     }
 } 
