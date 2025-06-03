@@ -33,13 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Book table button functionality
     const bookTableButton = document.querySelector('.book-table');
-    bookTableButton.addEventListener('click', () => {
-        alert('Функция бронирования столика будет доступна в ближайшее время!');
-    });
+    if (bookTableButton) {
+        bookTableButton.addEventListener('click', () => {
+            alert('Функция бронирования столика будет доступна в ближайшее время!');
+        });
+    }
 
     // Add animation to menu items on scroll
     const menuItems = document.querySelectorAll('.menu-item');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
     const observerOptions = {
         threshold: 0.2
@@ -61,28 +62,28 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(item);
     });
 
-    galleryItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
-    });
-
     // Burger menu
     const burger = document.querySelector('.burger');
     const mobileNav = document.querySelector('.mobile-nav');
     const mobileNavClose = document.querySelector('.mobile-nav-close');
+
     burger.addEventListener('click', function() {
         burger.classList.toggle('open');
-        mobileNav.classList.toggle('open');
+        if (mobileNav) {
+            mobileNav.classList.toggle('open');
+        }
     });
+
     // Закрытие меню по клику на ссылку
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', function() {
-            burger.classList.remove('open');
-            mobileNav.classList.remove('open');
+    if (mobileNav) {
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                burger.classList.remove('open');
+                mobileNav.classList.remove('open');
+            });
         });
-    });
+    }
+
     // Закрытие меню по кнопке-крестику
     if (mobileNavClose) {
         mobileNavClose.addEventListener('click', function() {
@@ -90,4 +91,4 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileNav.classList.remove('open');
         });
     }
-}); 
+});
